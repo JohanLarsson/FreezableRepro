@@ -10,6 +10,7 @@
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new Vm();
         }
     }
 }

@@ -4,26 +4,26 @@
 
     public class Dummy : Freezable
     {
-        public static readonly DependencyProperty WidthProperty = DependencyProperty.Register(
-            "Width",
-            typeof (double),
-            typeof (Dummy),
-            new PropertyMetadata(default(double)));
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
+            "Value",
+            typeof(object),
+            typeof(Dummy),
+            new PropertyMetadata(null));
 
-        public double Width
+        public object Value
         {
             get
             {
-                return (double) GetValue(WidthProperty);
+                return (object)GetValue(ValueProperty);
             }
             set
             {
-                SetValue(WidthProperty, value);
+                SetValue(ValueProperty, value);
             }
         }
         public override string ToString()
         {
-            return Width.ToString();
+            return Value == null ? "null" : Value.ToString();
         }
         protected override Freezable CreateInstanceCore()
         {
