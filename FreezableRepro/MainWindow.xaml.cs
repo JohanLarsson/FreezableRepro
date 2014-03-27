@@ -28,6 +28,7 @@ namespace FreezableRepro
         private void Rectangle1_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             var width = Dummy1.Width;
+            var width = Dummy1.Width;
         }
     }
 }
