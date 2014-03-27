@@ -3,13 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:freezableRepro="clr-namespace:FreezableRepro"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Rectangle x:Name="Rectangle1" Width="100" Height="100" Fill="Beige" MouseLeftButtonDown="Rectangle1_OnMouseLeftButtonDown"/>
-        <freezableRepro:DummyCollection>
-            <freezableRepro:DummyCollection.Dummies>
-                <freezableRepro:Dummy x:Name="Dummy1" Width="{Binding ElementName=Rectangle1, Path=ActualWidth}"/>
-                <freezableRepro:Dummy x:Name="Dummy2" Width="{Binding ElementName=Rectangle1, Path=ActualWidth}"/>
-            </freezableRepro:DummyCollection.Dummies>
-        </freezableRepro:DummyCollection>
-    </Grid>
+    <DockPanel>
+        <Rectangle x:Name="Rectangle1" Width="100" Height="100" Fill="Beige"/>
+        <ListBox>
+            <freezableRepro:Dummy Width="{Binding ElementName=Rectangle1, Path=ActualWidth}"/>
+            <freezableRepro:Dummy Width="{Binding ElementName=Rectangle1, Path=ActualWidth}"/>
+        </ListBox>
+    </DockPanel>
 </Window>

@@ -1,10 +1,5 @@
 ﻿namespace FreezableRepro
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows;
 
     public class Dummy : Freezable
@@ -25,6 +20,10 @@
             {
                 SetValue(WidthProperty, value);
             }
+        }
+        public override string ToString()
+        {
+            return Width.ToString();
         }
         protected override Freezable CreateInstanceCore()
         {
